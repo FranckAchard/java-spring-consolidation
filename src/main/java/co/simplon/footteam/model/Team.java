@@ -1,7 +1,8 @@
 package co.simplon.footteam.model;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Team {
 
@@ -14,7 +15,7 @@ public class Team {
 	
 	private String name;
 	private TeamType type;
-	private Set<Player> players = new HashSet<Player>();
+	private List<Player> players = new ArrayList<Player>();
 
 	/*
 	 * Code constructors here
@@ -26,7 +27,7 @@ public class Team {
 		super();
 	}
 
-	public Team(String name, TeamType type, Set<Player> players) {
+	public Team(String name, TeamType type, List<Player> players) {
 		super();
 		this.name = name;
 		this.type = type;
@@ -37,17 +38,16 @@ public class Team {
 	 * Code here a function that sort players by their notes
 	 */
 	
-	public Set<Player> sortPlayersByAvgNote() {
-		Set<Player> res =  new HashSet<Player>();
-		return res;
+	public void sortPlayersByAvgNote() {
+		Collections.sort(players, new NameComparator());
 	}
 	
 	/*
 	 * Code here a function that sort players by their position
 	 */
 	
-	public Set<Player> sortPlayersByPosition() {
-		Set<Player> res =  new HashSet<Player>();
+	public List<Player> sortPlayersByPosition() {
+		List<Player> res =  new ArrayList<Player>();
 		return res;
 	}
 	
@@ -55,8 +55,8 @@ public class Team {
 	 * Code here a function that sort players by their name
 	 */
 	
-	public Set<Player> sortPlayersByName() {
-		Set<Player> res =  new HashSet<Player>();
+	public List<Player> sortPlayersByName() {
+		List<Player> res =  new ArrayList<Player>();
 		return res;
 	}
 	
@@ -68,11 +68,12 @@ public class Team {
 	public boolean addPlayer(Player player) {
 		return this.players.add(player);
 	}
-	
+		
 	@Override
 	public String toString() {
 		return "Team [name=" + name + ", type=" + type + ", nb players=" + players.size() + "]";
 	}
+	
 	
 	
 }

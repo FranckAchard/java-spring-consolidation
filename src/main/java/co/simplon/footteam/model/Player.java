@@ -7,12 +7,12 @@ public class Player {
 	 * - First name of the player
 	 * - Last name of the player
 	 * - Position on the field (number)
-	 * - Average avgNote (0 to 100)
+	 * - Average note (0 to 100)
 	 */
 	
 	private String firstName;
 	private String lastName;
-	private String position;
+	private int position;
 	private int avgNote;
 
 	
@@ -25,7 +25,7 @@ public class Player {
 		super();
 	}
 	
-	public Player(String firstName, String lastName, String position, int avgNote) {
+	public Player(String firstName, String lastName, int position, int avgNote) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -53,11 +53,11 @@ public class Player {
 		this.lastName = lastName;
 	}
 
-	public String getPosition() {
+	public int getPosition() {
 		return position;
 	}
 
-	public void setPosition(String position) {
+	public void setPosition(int position) {
 		this.position = position;
 	}
 
@@ -77,5 +77,5 @@ public class Player {
 	}
 	
 	
-	
 }
+
